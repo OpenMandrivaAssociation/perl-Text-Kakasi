@@ -1,7 +1,7 @@
 %define module  Text-Kakasi
 %define name    perl-%{module}
 %define version 2.04
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name:           %{name}
 Version:        %{version}
