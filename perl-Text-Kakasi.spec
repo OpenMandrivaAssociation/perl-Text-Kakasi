@@ -15,6 +15,7 @@ Requires:       kakasi >= 2.3.1
 BuildRequires:  perl-devel
 BuildRequires:  kakasi-devel >= 2.3.1
 BuildRequires:  kakasi-dict
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 This module provides libkakasi interface for perl. libkakasi is a part
