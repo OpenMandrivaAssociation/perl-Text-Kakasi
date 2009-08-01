@@ -1,21 +1,21 @@
-%define module  Text-Kakasi
-%define name    perl-%{module}
-%define version 2.04
-%define release %mkrel 7
+%define upstream_name    Text-Kakasi
+%define upstream_version 2.04
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Perl binding for KAKASI the kanji kana simple inverter
-License:        GPL
-Group:          Development/Perl
-URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Email/%{module}-%{version}.tar.bz2
-Requires:       kakasi >= 2.3.1
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Perl binding for KAKASI the kanji kana simple inverter
+License:    GPL
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Email/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:  perl-devel
 BuildRequires:  kakasi-devel >= 2.3.1
 BuildRequires:  kakasi-dict
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
+Requires:       kakasi >= 2.3.1
 
 %description
 This module provides libkakasi interface for perl. libkakasi is a part
@@ -27,7 +27,7 @@ More information about KAKASI is available at <http://kakasi.namazu.org/>.
 
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -49,4 +49,3 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 %{perl_vendorarch}/Text
 %{perl_vendorarch}/auto/Text
-
