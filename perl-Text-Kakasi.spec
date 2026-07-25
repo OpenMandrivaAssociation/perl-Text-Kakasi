@@ -2,14 +2,14 @@
 %define upstream_version 2.04
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	6
 
 Summary:	Perl binding for KAKASI the kanji kana simple inverter
 License:	GPL
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Email/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/Text-Kakasi
+Source0:	https://cpan.metacpan.org/authors/id/D/DA/DANKOGAI/Text-Kakasi-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
