@@ -1,15 +1,13 @@
 %define upstream_name    Text-Kakasi
-%define upstream_version 2.04
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	2.04
+Release:	7
 
 Summary:	Perl binding for KAKASI the kanji kana simple inverter
 License:	GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Text-Kakasi
-Source0:	https://cpan.metacpan.org/authors/id/D/DA/DANKOGAI/Text-Kakasi-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/D/DA/DANKOGAI/Text-Kakasi-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -26,7 +24,7 @@ documents.
 More information about KAKASI is available at <http://kakasi.namazu.org/>.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version} 
+%setup -q -n %{upstream_name}-%{version} 
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -55,9 +53,7 @@ make test
 
 * Sat Aug 01 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 2.40.0-1mdv2010.0
 + Revision: 405710
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 2.04-7mdv2009.0
+- rebuild using %2.04 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 2.04-7mdv2009.0
 + Revision: 258617
 - rebuild
 
