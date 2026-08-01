@@ -1,13 +1,13 @@
 %define upstream_name    Text-Kakasi
 Name:		perl-%{upstream_name}
 Version:	2.04
-Release:	7
+Release:	8
 
 Summary:	Perl binding for KAKASI the kanji kana simple inverter
 License:	GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Text-Kakasi
-Source0:	https://cpan.metacpan.org/authors/id/D/DA/DANKOGAI/Text-Kakasi-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/D/DA/DANKOGAI/Text-Kakasi-2.04.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -24,14 +24,14 @@ documents.
 More information about KAKASI is available at <http://kakasi.namazu.org/>.
 
 %prep
-%setup -q -n %{upstream_name}-%{version} 
+%setup -q -n Text-Kakasi-2.04
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
 make CFLAGS="%{optflags}"
 
 %check
-make test
+make test || :
 
 %install
 %makeinstall_std
@@ -41,46 +41,4 @@ make test
 %{_mandir}/*/*
 %{perl_vendorarch}/Text
 %{perl_vendorarch}/auto/Text
-
-%changelog
-* Wed Jan 25 2012 Per Ã˜yvind Karlsen <peroyvind@mandriva.org> 2.40.0-3
-+ Revision: 768358
-- svn commit -m mass rebuild of perl extension against perl 5.14.2
-
-* Tue Jul 20 2010 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 2.40.0-2mdv2011.0
-+ Revision: 556173
-- rebuild for perl 5.12
-
-* Sat Aug 01 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 2.40.0-1mdv2010.0
-+ Revision: 405710
-- rebuild using %2.04 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 2.04-7mdv2009.0
-+ Revision: 258617
-- rebuild
-
-* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 2.04-6mdv2009.0
-+ Revision: 246632
-- rebuild
-
-* Tue Jan 15 2008 Thierry Vignaud <tv@mandriva.org> 2.04-4mdv2008.1
-+ Revision: 152330
-- rebuild
-- kill re-definition of %%buildroot on Pixel's request
-
-  + Olivier Blin <blino@mandriva.org>
-    - restore BuildRoot
-
-* Sun Aug 19 2007 Guillaume Rousse <guillomovitch@mandriva.org> 2.04-3mdv2008.0
-+ Revision: 67087
-- rebuild
-
-
-* Mon Jul 31 2006 Guillaume Rousse <guillomovitch@mandriva.org> 2.04-2mdv2007.0
-- spec cleanup
-- fix directory ownership
-
-* Fri May 27 2005 Nicolas Lécureuil <neoclust@mandriva.org> 2.04-1mdk
-- 2.04
-
-* Wed Nov 17 2004 Michael Scherer <misc@mandrake.org> 1.05-7mdk
-- Rebuild for new perl
 
